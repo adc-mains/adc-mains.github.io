@@ -3,6 +3,7 @@
 
 <head>
 
+    <script src="js/stream.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
@@ -29,19 +30,15 @@
         console.log();
         firebase.database().ref("movie_name").once('value').then(function(eh) {
             document.getElementById("movieName").innerHTML = eh.val();
-            console.log(eh.val());
         });
-        firebase.database().ref("movie_release").once('value').then(function(eh) {
-            console.log(eh.val());
-        });
+        firebase.database().ref("movie_release").once('value').then(function(eh) {});
         firebase.database().ref("movie_poster").once('value').then(function(eh) {
-            console.log(eh.val());
             document.getElementById("moviePoster").src = eh.val();
         });
     </script>
 
     <meta charset="UTF-8">
-    <title>Strem</title>
+    <title>Stream</title>
     <link rel="stylesheet" type="text/css" href="css/stream.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
@@ -71,6 +68,8 @@
             <img id="moviePoster" class="moviePoster">
         </div>
     </div>
+
+    <video id="video"></video>
 
 </body>
 
