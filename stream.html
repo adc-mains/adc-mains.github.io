@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html>
-   <head>
 
+<head>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzhU1xTs7POsnzcP7ygBdjpOs80iOjZvM",
-    authDomain: "adc-mains.firebaseapp.com",
-    databaseURL: "https://adc-mains.firebaseio.com",
-    projectId: "adc-mains",
-    storageBucket: "adc-mains.appspot.com",
-    messagingSenderId: "503301326605",
-    appId: "1:503301326605:web:295a1fc40d0bc694"
-  };
-  // Initialize Firebase
-  var project = firebase.initializeApp(firebaseConfig);
-  var database = firebase.database();
-  // var firebase = require('firebase/app');
-  console.log();
-  firebase.database().ref("movie_name").once('value').then(function(eh) {
-    document.getElementById("movieName").innerHTML = eh.val();
-    console.log(eh.val());
-  });
-  firebase.database().ref("movie_release").once('value').then(function(eh) {
-    console.log(eh.val());
-  });
-  firebase.database().ref("movie_poster").once('value').then(function(eh) {
-    console.log(eh.val());
-    document.getElementById("moviePoster").src = eh.val();
-  });
-</script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCzhU1xTs7POsnzcP7ygBdjpOs80iOjZvM",
+            authDomain: "adc-mains.firebaseapp.com",
+            databaseURL: "https://adc-mains.firebaseio.com",
+            projectId: "adc-mains",
+            storageBucket: "adc-mains.appspot.com",
+            messagingSenderId: "503301326605",
+            appId: "1:503301326605:web:295a1fc40d0bc694"
+        };
+        // Initialize Firebase
+        var project = firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        // var firebase = require('firebase/app');
+        console.log();
+        firebase.database().ref("movie_name").once('value').then(function(eh) {
+            document.getElementById("movieName").innerHTML = eh.val();
+            console.log(eh.val());
+        });
+        firebase.database().ref("movie_release").once('value').then(function(eh) {
+            console.log(eh.val());
+        });
+        firebase.database().ref("movie_poster").once('value').then(function(eh) {
+            console.log(eh.val());
+            document.getElementById("moviePoster").src = eh.val();
+        });
+    </script>
 
-
-       <meta charset="UTF-8">
-       <title>Strem</title>
-       <link rel="stylesheet" type="text/css" href="css/stream.css">
-       <link rel="shortcut icon" href="favicon.ico" />
-       <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    <meta charset="UTF-8">
+    <title>Strem</title>
+    <link rel="stylesheet" type="text/css" href="css/stream.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
         const button = new Crate({
-          server: '613621630077501440',
-          channel: '613621630077501443',
-          shard: 'https://disweb.deploys.io'
+            server: '613621630077501440',
+            channel: '613621630077501443',
+            shard: 'https://disweb.deploys.io'
         })
-        button.onclick = function(){
-          console.log("clicked")
+        button.onclick = function() {
+            console.log("clicked")
         }
-      </script>
-    </head>
-    <body>
-      <div class="mainWrapper">
+    </script>
 
-      
+</head>
+
+<body>
+    <div class="mainWrapper">
+
         <div id='streams' class="wrapper">
-            <iframe  class="float-left" width="1280" height="720" src="https://www.smashcast.tv/embed/turbofister999" frameborder="0" allow="autoplay" allow="encrypted-media" allowfullscreen></iframe>
-            
-          </div>
+            <iframe class="float-left" width="1280" height="720" src="https://www.smashcast.tv/embed/turbofister999" frameborder="0" allow="autoplay" allow="encrypted-media" allowfullscreen></iframe>
 
-          <div class="nowPlayingContainer">
-              <img width="200" height="56" src="https://i.ibb.co/p3NrRjv/now-playing.png">
-              <p id="movieName"></p>
-              <img id="moviePoster" class="moviePoster">
-          </div>
         </div>
-          
-    </body>
-    </html>
+
+        <div class="nowPlayingContainer">
+            <img width="200" height="56" src="https://i.ibb.co/p3NrRjv/now-playing.png">
+            <p id="movieName"></p>
+            <img id="moviePoster" class="moviePoster">
+        </div>
+    </div>
+
+</body>
+
+</html>
