@@ -22,23 +22,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
             iframes[1].parentNode.removeChild(iframes[1])
             chat = false;
         }
-        
-     
      };
-
-     
 });
-
-
-
-// function openNav() {
-//     if (chat == false) {
-//        document.getElementById("chat").style.width = "350px";
-//        chat = true;
-//     } else {
-//        document.getElementById("chat").style.width = "0px";
-//        chat = false;
-//     }
-   
-   // document.getElementById("main").style.marginLeft = "250px";
-//  }
